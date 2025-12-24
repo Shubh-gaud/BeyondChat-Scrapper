@@ -3,5 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return response()->json([
+        'status' => 'Backend running',
+        'app' => config('app.name'),
+        'time' => now()
+    ]);
 });
